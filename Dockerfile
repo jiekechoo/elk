@@ -23,6 +23,10 @@ RUN \
 
 ADD etc/supervisor/conf.d/elasticsearch.conf /etc/supervisor/conf.d/elasticsearch.conf
 
+# auto delete old indices daily
+ADD scripts/elasticsearch-remove-old-indices.sh /usr/bin/elasticsearch-remove-old-indices.sh
+RUN ln -s /usr/bin/elasticsearch-remove-old-indices.sh /etc/cron.daily/elasticsearch-remove-old-indices.sh
+
 # Logstash
 RUN apt-get install --no-install-recommends -y logstash && \
     apt-get clean
