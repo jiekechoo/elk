@@ -34,11 +34,14 @@ RUN apt-get install --no-install-recommends -y logstash && \
 ADD etc/supervisor/conf.d/logstash.conf /etc/supervisor/conf.d/logstash.conf
 
 # Logstash plugins
-#RUN /opt/logstash/bin/plugin install logstash-filter-translate
+COPY output-jdbc/logstash-output-jdbc-0.1.1.gem /tmp/
+RUN /opt/logstash/bin/plugin install /tmp/logstash-output-jdbc-0.1.1.gem
+RUN mkdir -p /opt/logstash/vendor/jar/jdbc/
+COPY output-jdbc/mysql-connector-java-5.1.36-bin.jar /opt/logstash/vendor/jar/jdbc/
 
 # Kibana
 RUN \
-    curl -s https://download.elasticsearch.org/kibana/kibana/kibana-4.1.2-linux-x64.tar.gz | tar -C /opt -xz && \
+    curl -s http://192.168.1.10/downloads/kibana-4.1.2-linux-x64.tar.gz | tar -C /opt -xz && \
     ln -s /opt/kibana-4.1.2-linux-x64 /opt/kibana && \
     sed -i 's/port: 5601/port: 80/' /opt/kibana/config/kibana.yml
 
