@@ -47,6 +47,20 @@ RUN \
 
 ADD etc/supervisor/conf.d/kibana.conf /etc/supervisor/conf.d/kibana.conf
 
+RUN curl -s http://apache.fayea.com/incubator/zeppelin/0.5.0-incubating/zeppelin-0.5.0-incubating-bin-spark-1.4.0_hadoop-2.3.tgz | tar -C /opt -zx && ln -s /opt/zeppelin-0.5.0-incubating-bin-spark-1.4.0_hadoop-2.3/zeppelin-0.5.0-incubating /opt/zeppelin
+
+RUN curl -s http://192.168.1.10/downloads/zeppelin-interpreter-mysql-0.5.0.tar.gz |tar -C /opt/zeppelin/interpreter -zx
+
+ADD etc/zeppelin.conf /etc/supervisor/conf.d/zeppelin.conf
+
+COPY zeppelin/zeppelin-site.xml /opt/zeppelin/conf/zeppelin-site.xml
+
+COPY zeppelin/interpreter.json /opt/zeppelin/conf/interpreter.json
+
+EXPOSE 8080
+
+EXPOSE 8081
+
 EXPOSE 80
 
 ENV PATH /opt/logstash/bin:$PATH

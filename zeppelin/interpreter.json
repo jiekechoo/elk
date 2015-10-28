@@ -1,0 +1,189 @@
+{
+  "interpreterSettings": {
+    "2B2CU79DN": {
+      "id": "2B2CU79DN",
+      "name": "md",
+      "group": "md",
+      "properties": {},
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.markdown.Markdown",
+          "name": "md"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B3Q8EYXS": {
+      "id": "2B3Q8EYXS",
+      "name": "spark",
+      "group": "spark",
+      "properties": {
+        "spark.cores.max": "",
+        "spark.yarn.jar": "",
+        "master": "local[*]",
+        "zeppelin.spark.maxResult": "1000",
+        "zeppelin.dep.localrepo": "local-repo",
+        "spark.app.name": "Zeppelin",
+        "spark.executor.memory": "512m",
+        "zeppelin.spark.useHiveContext": "true",
+        "zeppelin.spark.concurrentSQL": "false",
+        "spark.home": "",
+        "args": "",
+        "zeppelin.pyspark.python": "python"
+      },
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.spark.SparkInterpreter",
+          "name": "spark"
+        },
+        {
+          "class": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "name": "pyspark"
+        },
+        {
+          "class": "org.apache.zeppelin.spark.SparkSqlInterpreter",
+          "name": "sql"
+        },
+        {
+          "class": "org.apache.zeppelin.spark.DepInterpreter",
+          "name": "dep"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B1YQCXCN": {
+      "id": "2B1YQCXCN",
+      "name": "angular",
+      "group": "angular",
+      "properties": {},
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.angular.AngularInterpreter",
+          "name": "angular"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B57FMA4A": {
+      "id": "2B57FMA4A",
+      "name": "flink",
+      "group": "flink",
+      "properties": {
+        "local": "true",
+        "jobmanager.rpc.port": "6123",
+        "jobmanager.rpc.address": "localhost"
+      },
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.flink.FlinkInterpreter",
+          "name": "flink"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B398PBV7": {
+      "id": "2B398PBV7",
+      "name": "mysql",
+      "group": "mysql",
+      "properties": {
+        "--host": "192.168.1.20",
+        "--user": "root",
+        "--port": "3306",
+        "--password": "talent123"
+      },
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.mysql.MysqlInterpreter",
+          "name": "mysql"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B4HEZ1QH": {
+      "id": "2B4HEZ1QH",
+      "name": "hive",
+      "group": "hive",
+      "properties": {
+        "hive.hiveserver2.url": "jdbc:hive2://localhost:10000",
+        "hive.hiveserver2.password": "",
+        "hive.hiveserver2.user": "hive"
+      },
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.hive.HiveInterpreter",
+          "name": "hive"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B2YF95CA": {
+      "id": "2B2YF95CA",
+      "name": "tajo",
+      "group": "tajo",
+      "properties": {
+        "tajo.jdbc.uri": "jdbc:tajo://localhost:26002/default"
+      },
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.tajo.TajoInterpreter",
+          "name": "tajo"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    },
+    "2B4EDQ7EX": {
+      "id": "2B4EDQ7EX",
+      "name": "sh",
+      "group": "sh",
+      "properties": {},
+      "interpreterGroup": [
+        {
+          "class": "org.apache.zeppelin.shell.ShellInterpreter",
+          "name": "sh"
+        }
+      ],
+      "option": {
+        "remote": true
+      }
+    }
+  },
+  "interpreterBindings": {
+    "2B2U1TMYQ": [
+      "2B3Q8EYXS",
+      "2B2CU79DN",
+      "2B1YQCXCN",
+      "2B4EDQ7EX",
+      "2B4HEZ1QH",
+      "2B2YF95CA",
+      "2B57FMA4A",
+      "2B398PBV7"
+    ],
+    "2B4G3CCBY": [],
+    "2B4KJ46KW": [
+      "2B3Q8EYXS",
+      "2B2CU79DN",
+      "2B1YQCXCN",
+      "2B4EDQ7EX",
+      "2B4HEZ1QH",
+      "2B2YF95CA",
+      "2B57FMA4A"
+    ]
+  }
+}
+
+
+
